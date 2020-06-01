@@ -1,18 +1,18 @@
 {% set name = "bar_chart_race" %}
-{% set version = "0.0.6" %}
+{% set version = "0.1.0" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 70c0f6f897a4746472123e509431e75e75a13d5613c27ef8c5b90c8fabdb80b6
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 4c5554d0991548e43ce9226a28b8dae5a7f7a9955f5523ba36364d61d4701b1b
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
-  noarch: python 
+  noarch: python
 
 requirements:
   host:
@@ -34,7 +34,7 @@ about:
   license_family: MIT
   # https://github.com/dexplo/bar_chart_race/issues/2
   license_file: LICENSE
-  summary: "Create animated bar chart races using matplotlib"
+  summary: Create animated bar chart races using matplotlib
   doc_url: https://github.com/dexplo/bar_chart_race
 
 extra:
