@@ -1,5 +1,5 @@
 {% set name = "bar_chart_race" %}
-{% set version = "0.0.6" %}
+{% set version = "0.1.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,36 +7,38 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 70c0f6f897a4746472123e509431e75e75a13d5613c27ef8c5b90c8fabdb80b6
+  sha256: 4c5554d0991548e43ce9226a28b8dae5a7f7a9955f5523ba36364d61d4701b1b
 
 build:
-  number: 1
-  script: {{ PYTHON }} -m pip install . -vv
-  noarch: python 
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
+    - matplotlib >=3.1
+    - pandas >=0.24
     - pip
     - python
   run:
+    - matplotlib >=3.1
+    - pandas >=0.24
     - python
-    - pandas
-    - numpy
-    - matplotlib-base
 
 test:
   imports:
     - bar_chart_race
+    - tests
 
 about:
-  home: https://github.com/dexplo/bar_chart_race
+  home: https://dexplo.org/bar_chart_race
   license: MIT
   license_family: MIT
-  # https://github.com/dexplo/bar_chart_race/issues/2
   license_file: LICENSE
   summary: "Create animated bar chart races using matplotlib"
-  doc_url: https://github.com/dexplo/bar_chart_race
+  doc_url: https://dexplo.org/bar_chart_race
+  dev_url: https://github.com/dexplo/bar_chart_race
 
 extra:
   recipe-maintainers:
+    - tdpetrou
     - rpanai
