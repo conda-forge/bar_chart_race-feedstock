@@ -12,12 +12,15 @@ source:
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
     - pip
     - python
+    - numpy >=1.15.0
+    - matplotlib-base >=3.1.0
+    - pandas >=0.24.0
   run:
     - python
     - numpy >=1.15.0
