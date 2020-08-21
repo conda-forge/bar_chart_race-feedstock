@@ -1,11 +1,11 @@
 About bar_chart_race
 ====================
 
-Home: https://github.com/dexplo/bar_chart_race
+Home: https://dexplo.org/bar_chart_race
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Create animated bar chart races using matplotlib
 
@@ -116,5 +116,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@rpanai](https://github.com/rpanai/)
+* [@panai](https://github.com/panai/)
+* [@tdpetrou](https://github.com/tdpetrou/)
 
