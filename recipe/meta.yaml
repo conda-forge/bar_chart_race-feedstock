@@ -11,23 +11,25 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
     - pip
-    - python
+    - python {{ python_min }}
     - numpy >=1.15.0
     - matplotlib-base >=3.1.0
     - pandas >=0.24.0
   run:
-    - python
+    - python >={{ python_min }}
     - numpy >=1.15.0
     - matplotlib-base >=3.1.0
     - pandas >=0.24.0
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - bar_chart_race
 
